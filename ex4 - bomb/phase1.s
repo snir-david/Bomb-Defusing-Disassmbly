@@ -1,5 +1,5 @@
 00000000004011b0 <phase_1>:
-4011b0:       48 83 ec 08             sub    $0x8,%rsp
+4011b0:       48 83 ec 08             sub    $0x8,%rsp 
 4011b4:       be 68 23 40 00          mov    $0x402368,%esi
 4011b9:       e8 2e 00 00 00          callq  4011ec <strings_not_equal>
 4011be:       85 c0                   test   %eax,%eax
