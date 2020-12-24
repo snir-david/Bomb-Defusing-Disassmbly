@@ -23,7 +23,7 @@
 400d81:       e8 02 fd ff ff          callq  400a88 <printf@plt>
 400d86:       bf 08 00 00 00          mov    $0x8,%edi
 400d8b:       e8 48 fd ff ff          callq  400ad8 <exit@plt>
-400d90:       48 8b 36                mov    (%rsi),%rsi     
+400d90:       48 8b 36                mov    (%rsi),%rsi
 400d93:       bf 0f 22 40 00          mov    $0x40220f,%edi
 400d98:       b8 00 00 00 00          mov    $0x0,%eax
 400d9d:       e8 e6 fc ff ff          callq  400a88 <printf@plt>
@@ -41,7 +41,7 @@
 400dd7:       bf e8 22 40 00          mov    $0x4022e8,%edi
 400ddc:       e8 d7 fc ff ff          callq  400ab8 <puts@plt>
 400de1:       e8 bf 06 00 00          callq  4014a5 <read_line>
-400de6:       48 89 c7                mov    %rax,%rdi
+400de6:       48 89 c7                mov    %rax,%rdi  #rdi = rax =string user
 400de9:       e8 60 02 00 00          callq  40104e <phase_2>
 400dee:       e8 33 05 00 00          callq  401326 <phase_defused>
 400df3:       bf 29 22 40 00          mov    $0x402229,%edi

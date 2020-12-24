@@ -2,7 +2,7 @@
 40104e:       55                      push   %rbp
 40104f:       53                      push   %rbx
 401050:       48 83 ec 28             sub    $0x28,%rsp
-401054:       48 89 e6                mov    %rsp,%rsi
+401054:       48 89 e6                mov    %rsp,%rsi #allocating 40 bytes
 401057:       e8 89 03 00 00          callq  4013e5 <read_six_numbers>
 40105c:       83 3c 24 00             cmpl   $0x0,(%rsp)
 401060:       79 05                   jns    401067 <phase_2+0x19>
