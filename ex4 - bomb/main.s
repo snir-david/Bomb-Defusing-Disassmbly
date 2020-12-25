@@ -1,7 +1,7 @@
 0000000000400d34 <main>:
 400d34:       55                      push   %rbp
 400d35:       53                      push   %rbx
-400d36:       48 83 ec 08             sub    $0x8,%rsp  #allocating 8 bytes for stack
+400d36:       48 83 ec 08             sub    $0x8,%rsp  #allocating 8 bytes for stack - rsp = rbp+8
 400d3a:       48 89 f3                mov    %rsi,%rbx  #getting second arg (file name) into %rbx
 400d3d:       83 ff 01                cmp    $0x1,%edi  #checking if argc ==1 only file name
 400d40:       75 10                   jne    400d52 <main+0x1e>
@@ -22,26 +22,27 @@
 400d7c:       bf f2 21 40 00          mov    $0x4021f2,%edi
 400d81:       e8 02 fd ff ff          callq  400a88 <printf@plt>
 400d86:       bf 08 00 00 00          mov    $0x8,%edi
-400d8b:       e8 48 fd ff ff          callq  400ad8 <exit@plt>
-400d90:       48 8b 36                mov    (%rsi),%rsi
-400d93:       bf 0f 22 40 00          mov    $0x40220f,%edi
+400d8b:       e8 48 fd ff ff          callq  400ad8 <exit@plt> #end opening file
+400d90:       48 8b 36                mov    (%rsi),%rsi #rsi = args number
+400d93:       bf 0f 22 40 00          mov    $0x40220f,%edi #printing Usage %s
 400d98:       b8 00 00 00 00          mov    $0x0,%eax
 400d9d:       e8 e6 fc ff ff          callq  400a88 <printf@plt>
 400da2:       bf 08 00 00 00          mov    $0x8,%edi
 400da7:       e8 2c fd ff ff          callq  400ad8 <exit@plt>
 400dac:       e8 2f 08 00 00          callq  4015e0 <initialize_bomb>
-400db1:       bf 78 22 40 00          mov    $0x402278,%edi
-400db6:       e8 fd fc ff ff          callq  400ab8 <puts@plt>
-400dbb:       bf b8 22 40 00          mov    $0x4022b8,%edi
-400dc0:       e8 f3 fc ff ff          callq  400ab8 <puts@plt>
+400db1:       bf 78 22 40 00          mov    $0x402278,%edi #rdi = Welcome  to my fiendish little bomb
+400db6:       e8 fd fc ff ff          callq  400ab8 <puts@plt> #print rdi
+400dbb:       bf b8 22 40 00          mov    $0x4022b8,%edi #rdi =
+400dc0:       e8 f3 fc ff ff          callq  400ab8 <puts@plt> #print rdi = which to blow yourself up. Have a nice day!
 400dc5:       e8 db 06 00 00          callq  4014a5 <read_line>
-400dca:       48 89 c7                mov    %rax,%rdi
+400dca:       48 89 c7                mov    %rax,%rdi #urdi = usr input
 400dcd:       e8 de 03 00 00          callq  4011b0 <phase_1>
 400dd2:       e8 4f 05 00 00          callq  401326 <phase_defused>
-400dd7:       bf e8 22 40 00          mov    $0x4022e8,%edi
+400dd7:       bf e8 22 40 00          mov    $0x4022e8,%edi #print rdi = Phase 1 defused. How about the next one?
 400ddc:       e8 d7 fc ff ff          callq  400ab8 <puts@plt>
 400de1:       e8 bf 06 00 00          callq  4014a5 <read_line>
-400de6:       48 89 c7                mov    %rax,%rdi  #rdi = rax =string user
+400de6:       48 89 c7                mov    %rax,%rdi  #rdi = user input
+                                            #rdi = user input , #rsi = argc
 400de9:       e8 60 02 00 00          callq  40104e <phase_2>
 400dee:       e8 33 05 00 00          callq  401326 <phase_defused>
 400df3:       bf 29 22 40 00          mov    $0x402229,%edi
