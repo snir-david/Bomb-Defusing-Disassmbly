@@ -1,6 +1,6 @@
 0000000000401125 <phase_3>:
 401125:       48 83 ec 18             sub    $0x18,%rsp #allocating 24 bytes for stack
-401129:       48 8d 4c 24 08          lea    0x8(%rsp),%rcx #%rcx = 64?
+401129:       48 8d 4c 24 08          lea    0x8(%rsp),%rcx
 40112e:       48 8d 54 24 0c          lea    0xc(%rsp),%rdx #rdx = second number
 401133:       be 8a 24 40 00          mov    $0x40248a,%esi #esi = %d %d
 401138:       b8 00 00 00 00          mov    $0x0,%eax
@@ -31,7 +31,7 @@
 401196:       e8 14 02 00 00          callq  4013af <explode_bomb>
 40119b:       b8 00 00 00 00          mov    $0x0,%eax
 4011a0:       3b 44 24 08             cmp    0x8(%rsp),%eax #if %eax = 8%rsp - defused
-4011a4i:       74 05                   je     4011ab <phase_3+0x86>
+4011a2:       74 05                   je     4011ab <phase_3+0x86>
 4011a6:       e8 04 02 00 00          callq  4013af <explode_bomb>
 4011ab:       48 83 c4 18             add    $0x18,%rsp
 4011af:       c3                      retq
