@@ -47,7 +47,7 @@
 400dee:       e8 33 05 00 00          callq  401326 <phase_defused>
 400df3:       bf 29 22 40 00          mov    $0x402229,%edi
 400df8:       e8 bb fc ff ff          callq  400ab8 <puts@plt>
-400dfd:       e8 a3 06 00 00          callq  4014a5 <read_line>
+400dfd:       e8 a3 06 00 00          callq  4014a5 <read_line> #two ints first greater than 7
 400e02:       48 89 c7                mov    %rax,%rdi
 400e05:       e8 1b 03 00 00          callq  401125 <phase_3>
 400e0a:       e8 17 05 00 00          callq  401326 <phase_defused>
