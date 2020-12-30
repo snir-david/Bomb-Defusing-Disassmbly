@@ -36,7 +36,7 @@
 400faa:       bb 00 00 00 00          mov    $0x0,%ebx  #rbx = 0
 400faf:       4c 8d 44 24 30          lea    0x30(%rsp),%r8 #r8 = first number in user input
 400fb4:       bd 01 00 00 00          mov    $0x1,%ebp  #ebp = 1
-400fb9:       be 50 32 60 00          mov    $0x603250,%esi #esi = 6304336
+400fb9:       be 50 32 60 00          mov    $0x603250,%esi #esi = 6304336 ?
 400fbe:       48 89 e7                mov    %rsp,%rdi  #rdi = rsp = first number in user input
 400fc1:       eb 19                   jmp    400fdc <phase_6+0x89>
                                       #loop
@@ -57,14 +57,14 @@
 400fe8:       7f d9                   jg     400fc3 <phase_6+0x70>  #1 < ecx
 400fea:       eb e2                   jmp    400fce <phase_6+0x7b> #else
                                       #loop jump - when rbx = 24
-400fec:       48 8b 1c 24             mov    (%rsp),%rbx #rbx = rsp = 6304336
+400fec:       48 8b 1c 24             mov    (%rsp),%rbx #rbx = rsp = " 2'"
 400ff0:       48 8b 44 24 08          mov    0x8(%rsp),%rax  #rax = last number?
 400ff5:       48 89 43 08             mov    %rax,0x8(%rbx) #rbx+8 = rax
 400ff9:       48 8b 54 24 10          mov    0x10(%rsp),%rdx  #rdx = '
 400ffe:       48 89 50 08             mov    %rdx,0x8(%rax)
 401002:       48 8b 44 24 18          mov    0x18(%rsp),%rax
 401007:       48 89 42 08             mov    %rax,0x8(%rdx)
-40100b:       48 8b 54 24 20          mov    0x20(%rsp),%rdx 
+40100b:       48 8b 54 24 20          mov    0x20(%rsp),%rdx
 401010:       48 89 50 08             mov    %rdx,0x8(%rax)
 401014:       48 8b 44 24 28          mov    0x28(%rsp),%rax
 401019:       48 89 42 08             mov    %rax,0x8(%rdx)
